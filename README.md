@@ -12,7 +12,7 @@
 
 # Codex on a 16GB GPU
 
-Everything behind the NetworkCoder video **"I Ran Codex for FREE on a 16GB GPU"**: the exact setup, the config, the prompts, the test inputs, the raw results and every screenshot. Use it to check the numbers or rerun the tests yourself.
+Everything behind the NetworkCoder video **"I Ran Codex for FREE on a 16GB GPU"**: the exact setup, the config, the prompts, the test inputs, the raw results and the key test results. Use it to check the numbers or rerun the tests yourself.
 
 **Stack:** RTX 5060 Ti 16GB · Qwen 3.8 Flash Next 125B (IQ3_S, 3-bit) · [Strata](https://github.com/Niko1221/Strata) v0.1.39 · OpenAI Codex CLI v0.162.1 · 100% offline
 
@@ -39,7 +39,7 @@ Everything behind the NetworkCoder video **"I Ran Codex for FREE on a 16GB GPU"*
 
 Level 1 used **145,984 tokens** (140,397 input, 5,587 output). Cost: **$0**.
 
-Full log: [`results/Codex_results_log.md`](results/Codex_results_log.md) · Screenshots: [`screenshots/`](screenshots/)
+Full log: [`results/Codex_results_log.md`](results/Codex_results_log.md) · Test results: [`test-results/`](test-results/)
 
 ## Engine speed (Strata, measured on this PC)
 
@@ -52,7 +52,7 @@ Full log: [`results/Codex_results_log.md`](results/Codex_results_log.md) · Scre
 | Agent prompt-cache hit | 68.8% (avg turn first token 3.82 s) |
 | Experts in RAM / cached on GPU | 46.8 GiB / ~4,600 experts (8.8 GiB) |
 
-Benchmark run at 64K context; the Codex tests ran at 128K. Screenshots: `24_strata_tuned_77.7toks_all_set.png`, `25_strata_benchmark_results_server_start.png`.
+Benchmark run at 64K context; the Codex tests ran at 128K. See `test-results/02_strata_tuned_77.7_tok_s.png` and `03_strata_benchmark.png`.
 
 ---
 
@@ -147,7 +147,7 @@ Build a personal expense tracker web app in this folder:
 - Python FastAPI backend + SQLite, single-page HTML/JS frontend (no frameworks)
 - add / edit / delete expenses (da…
 ```
-Expected import (browser check, `screenshots/20_L4_browser_import_CLEAN.mp4`): 22 imported, 0 skipped, 0 invalid. Food 6 · Transport 4 · Bills 3 · Entertainment 3 · Income 2 · Health 2 · Shopping 1 · Rent 1. Re-importing the same file gives 0 imported, 22 duplicates.
+Expected import (browser check, `test-results/L4_expenses_CSV_import.mp4`): 22 imported, 0 skipped, 0 invalid. Food 6 · Transport 4 · Bills 3 · Entertainment 3 · Income 2 · Health 2 · Shopping 1 · Rent 1. Re-importing the same file gives 0 imported, 22 duplicates.
 
 ---
 
@@ -157,21 +157,17 @@ Expected import (browser check, `screenshots/20_L4_browser_import_CLEAN.mp4`): 2
 - No web search in this setup.
 - One run per test. Your results will vary.
 
-## Screenshots
+## Test results
 | File | Shows |
 |---|---|
-| `00_strata_supported_models.png` | Strata's supported models page |
-| `01_nvidia_smi_5060ti_16GB.png` | The GPU |
-| `01_codex_install_0.162.1.png` | Codex install + version |
-| `02_codex_config_strata.png` | The config file |
-| `03_codex_exec_model_strata_first_run.png` | First run: model/provider = strata |
-| `04_bubblewrap_reasoning_medium.png` | bubblewrap install + reasoning effort |
-| `05_codex_welcome_strata_medium.png` | Codex running on "strata medium" |
-| `06`–`09` | Level 1: prompt, sandbox failure, YOLO mode, 21 tests passed |
-| `10`–`11` | Level 2: the bug found and fixed in 34s |
-| `12`–`14` | Level 3: headless test harness, autoplay bot, 13/13 checks |
-| `15`–`18`, `20` | Level 4: build, 44 tests, server, browser, CSV import |
-| `24`–`25` | Strata auto-tune (77.7 tok/s) and benchmark |
+| `01_codex_config_strata.png` | Codex pointed at Strata |
+| `02_strata_tuned_77.7_tok_s.png` | Strata auto-tune: 77.7 tok/s |
+| `03_strata_benchmark.png` | Strata benchmark |
+| `L1_todo_PASS_21_tests.png` | Level 1: 21/21 tests |
+| `L2_invoice_PASS_bug_fixed_34s.png` | Level 2: bug fixed in 34s |
+| `L3_snake_PASS_13_checks.png` | Level 3: 13/13 checks |
+| `L4_expenses_PASS_44_tests.png` | Level 4: 44 tests |
+| `L4_expenses_CSV_import.mp4` | Level 4: CSV import in the browser |
 
 ---
 
