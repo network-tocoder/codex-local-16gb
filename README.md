@@ -1,10 +1,10 @@
-# Codex on a 16GB GPU — no OpenAI account, no API bill
+# Codex on a 16GB GPU 
 
 Everything behind the NetworkCoder video **"I Ran Codex for FREE on a 16GB GPU"**: the exact setup, the config, the prompts, the test inputs, the raw results and every screenshot. Use it to check the numbers or rerun the tests yourself.
 
 **Stack:** RTX 5060 Ti 16GB · Qwen 3.8 Flash Next 125B (IQ3_S, 3-bit) · Strata v0.1.39 · OpenAI Codex CLI v0.162.1 · 100% offline
 
-▶️ Video: `[add YouTube link]`
+▶️ Video: `[https://www.youtube.com/watch?v=b2T5ineu7ek]`
 
 ---
 
