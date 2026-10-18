@@ -1,14 +1,32 @@
-# Codex on a 16GB GPU — no OpenAI account, no API bill
+<p align="center">
+  <img src="assets/banner.png" alt="Free Codex on a 16GB GPU: Strata + Codex + Qwen 125B" width="100%">
+</p>
+
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=b2T5ineu7ek"><img src="https://img.shields.io/badge/Watch%20on-YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="Watch on YouTube"></a>
+  <img src="https://img.shields.io/badge/GPU-RTX%205060%20Ti%2016GB-76B900?style=for-the-badge&logo=nvidia&logoColor=white" alt="RTX 5060 Ti 16GB">
+  <img src="https://img.shields.io/badge/Model-Qwen%203.8%20125B%20(3--bit)-7C4DFF?style=for-the-badge" alt="Qwen 3.8 125B">
+  <img src="https://img.shields.io/badge/API%20bill-%240-FFCD00?style=for-the-badge" alt="$0">
+  <img src="https://img.shields.io/badge/100%25-offline-2EA043?style=for-the-badge" alt="100% offline">
+</p>
+
+# Codex on a 16GB GPU
 
 Everything behind the NetworkCoder video **"I Ran Codex for FREE on a 16GB GPU"**: the exact setup, the config, the prompts, the test inputs, the raw results and every screenshot. Use it to check the numbers or rerun the tests yourself.
 
-**Stack:** RTX 5060 Ti 16GB · Qwen 3.8 Flash Next 125B (IQ3_S, 3-bit) · Strata v0.1.39 · OpenAI Codex CLI v0.162.1 · 100% offline
+**Stack:** RTX 5060 Ti 16GB · Qwen 3.8 Flash Next 125B (IQ3_S, 3-bit) · [Strata](https://github.com/Niko1221/Strata) v0.1.39 · OpenAI Codex CLI v0.162.1 · 100% offline
 
-▶️ Video: `[add YouTube link]`
+## ▶️ Watch the video
+
+<a href="https://www.youtube.com/watch?v=b2T5ineu7ek">
+  <img src="https://img.youtube.com/vi/b2T5ineu7ek/maxresdefault.jpg" alt="I Ran Codex for FREE on a 16GB GPU" width="640">
+</a>
 
 ---
 
 ## Results
+
+<p align="center"><img src="assets/results.png" alt="All 4 levels passed" width="100%"></p>
 
 | Level | Job | Result | Time* |
 |---|---|---|---|
@@ -48,7 +66,7 @@ nvidia-smi        # RTX 5060 Ti, 16311 MiB
 ### 2. Strata (v0.1.39 or newer)
 v0.1.39 added the OpenAI **Responses** endpoint (`/v1/responses`) that Codex needs. Install Strata, pick **Qwen 3.8 Flash Next (IQ3_S)** in its setup, and let it self-tune. It serves an OpenAI-compatible API at `http://127.0.0.1:8082/v1`.
 
-Strata: `[add link]`
+Strata: <https://github.com/Niko1221/Strata>
 
 ### 3. Install Codex
 ```bash
@@ -115,19 +133,19 @@ Write pytest tests in test_todo.py covering every command and the error, run the
 bash tests/level2_invoice/make_codex_l2.sh
 ```
 ```
-This is a shop's invoice calculator. Some tests in test_invoice.py are failing. Find the root cause, fix it in invoice.py (do not change the tests), and run the tests unti… [paste full prompt]
+This is a shop's invoice calculator. Some tests in test_invoice.py are failing. Find the root cause, fix it in invoice.py (do not change the tests), and run the tests unti…
 ```
 
 **Level 3 — Snake**
 ```
-Create snake.html: a complete Snake game in one HTML file (no libraries). Arrow keys to move, food grows the snake, score shown on screen, speed increases every 5 food, ga… [paste full prompt]
+Create snake.html: a complete Snake game in one HTML file (no libraries). Arrow keys to move, food grows the snake, score shown on screen, speed increases every 5 food, ga…
 ```
 
 **Level 4 — expense tracker.** Put [`tests/level4_expenses/bank_statement.csv`](tests/level4_expenses/bank_statement.csv) (22 sample transactions) in the folder.
 ```
 Build a personal expense tracker web app in this folder:
 - Python FastAPI backend + SQLite, single-page HTML/JS frontend (no frameworks)
-- add / edit / delete expenses (da… [paste full prompt]
+- add / edit / delete expenses (da…
 ```
 Expected import (browser check, `screenshots/20_L4_browser_import_CLEAN.mp4`): 22 imported, 0 skipped, 0 invalid. Food 6 · Transport 4 · Bills 3 · Entertainment 3 · Income 2 · Health 2 · Shopping 1 · Rent 1. Re-importing the same file gives 0 imported, 22 duplicates.
 
@@ -154,3 +172,9 @@ Expected import (browser check, `screenshots/20_L4_browser_import_CLEAN.mp4`): 2
 | `12`–`14` | Level 3: headless test harness, autoplay bot, 13/13 checks |
 | `15`–`18`, `20` | Level 4: build, 44 tests, server, browser, CSV import |
 | `24`–`25` | Strata auto-tune (77.7 tok/s) and benchmark |
+
+---
+
+<p align="center">
+  Made by <b>NetworkCoder</b> · <a href="https://www.youtube.com/watch?v=b2T5ineu7ek">Watch the video</a> · ⭐ Star the repo if it helped
+</p>
